@@ -5,7 +5,7 @@ import pytz
 import yaml
 from tools.final_answer import FinalAnswerTool
 
-from Gradio_UI import GradioUI
+from PyWebIO_UI import PyWebIOUI #from Gradio_UI import GradioUI
 
 # Below is an example of a tool that does nothing. Amaze us with your creativity !
 @tool
@@ -65,5 +65,6 @@ agent = CodeAgent(
     prompt_templates=prompt_templates
 )
 
-
-GradioUI(agent).launch()
+# Change the last line to use PyWebIOUI instead of GradioUI
+PyWebIOUI(agent).launch()
+# GradioUI(agent).launch()
