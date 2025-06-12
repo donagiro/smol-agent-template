@@ -319,11 +319,3 @@ managed_agent:
   report: |-
     Here is the final answer from your managed agent '{{name}}':
     {{final_answer}}
-final_answer: |-
-  Here is the final answer to your task:
-  {{answer}}
-
-  {% if explanation %}
-  Explanation:
-  {{explanation}}
-  {% endif %}

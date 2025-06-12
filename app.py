@@ -50,8 +50,8 @@ custom_role_conversions=None,
 # Import tool from Hub
 image_generation_tool = load_tool("agents-course/text-to-image", trust_remote_code=True)
 
-with open("prompts.yaml", 'r') as stream:
-    prompt_templates = yaml.safe_load(stream)
+with open("prompts.yaml", 'r') as f:
+    prompt_templates = dict(yaml.safe_load(f))
     
 agent = CodeAgent(
     model=model,
@@ -62,7 +62,7 @@ agent = CodeAgent(
     planning_interval=None,
     name=None,
     description=None,
-    prompt_templates=prompt_templates
+    # prompt_templates=prompt_templates // Preferably use inbuilt system prompt. can Uncomment this line if you want to use custom prompts
 )
 
 # Change the last line to use PyWebIOUI instead of GradioUI
